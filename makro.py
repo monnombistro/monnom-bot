@@ -15,7 +15,7 @@ def get_makro_price():
         
         browser = p.chromium.launch_persistent_context(
             user_data_dir=user_data_dir,
-            headless=False,
+            headless=True,
             args=["--start-maximized", "--disable-blink-features=AutomationControlled", "--no-sandbox"],
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
             viewport={"width": 1920, "height": 1080}
