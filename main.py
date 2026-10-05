@@ -37,7 +37,7 @@ def search_basket(items_to_search):
                 )
                 
                 output = result.stdout + "\n" + result.stderr
-		output = result.stdout + "\n" + result.stderr
+                output = result.stdout + "\n" + result.stderr
                 print(f"--- ЛОГИ ОТ {name} ---")
                 print(output)
                 
