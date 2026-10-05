@@ -17,7 +17,6 @@ def get_farutex_price():
         browser = p.chromium.launch_persistent_context(
             user_data_dir,
             headless=True,
-            channel="chrome", 
             args=["--disable-blink-features=AutomationControlled", "--disable-features=Translate"],
             viewport={"width": 1920, "height": 1080} 
         )

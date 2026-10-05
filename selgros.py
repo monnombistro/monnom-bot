@@ -8,8 +8,7 @@ def get_selgros_price():
         
         browser = p.chromium.launch_persistent_context(
             user_data_dir,
-            headless=True,
-            channel="chrome", 
+            headless=True, 
             args=[
                 "--disable-blink-features=AutomationControlled",
                 "--disable-features=Translate"
