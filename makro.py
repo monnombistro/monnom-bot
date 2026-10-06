@@ -1,5 +1,4 @@
 import sys
-from playwright_stealth import stealth_sync
 import re
 
 def parse_price(price_str):
@@ -16,12 +15,12 @@ def get_makro_price():
         browser = p.chromium.launch_persistent_context(
             user_data_dir=user_data_dir,
             headless=True,
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
             args=["--start-maximized", "--disable-blink-features=AutomationControlled", "--no-sandbox"],
             viewport={"width": 1920, "height": 1080}
         )
         
         page = browser.pages[0] if browser.pages else browser.new_page()
-        stealth_sync(page)
         page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
         print("🤖 Робот: Открываю сайт Makro...")
