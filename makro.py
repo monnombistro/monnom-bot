@@ -1,5 +1,5 @@
 import sys
-from playwright.sync_api import sync_playwright
+from playwright_stealth import stealth_sync
 import re
 
 def parse_price(price_str):
@@ -21,6 +21,7 @@ def get_makro_price():
         )
         
         page = browser.pages[0] if browser.pages else browser.new_page()
+        stealth_sync(page)
         page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
         print("🤖 Робот: Открываю сайт Makro...")
